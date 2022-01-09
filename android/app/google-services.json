@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "574445271943",
+    "project_id": "doctor-34f98",
+    "storage_bucket": "doctor-34f98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574445271943:android:2346d52a70f2fa90dbb122",
+        "android_client_info": {
+          "package_name": "com.example.medicine_notifier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574445271943-vkid732shj6k7jirm7446r58fc6r42jq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlHbbRI9gz74TOxs9xvpWCr3xTBaN2EQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574445271943-vkid732shj6k7jirm7446r58fc6r42jq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

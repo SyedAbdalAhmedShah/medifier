@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:medicine_notifier/view/choose_for_register.dart';
+import 'package:medicine_notifier/view/onBoarding/choose_for_register.dart';
 import 'package:medicine_notifier/view/onBoarding/slider_page.dart';
 import 'package:medicine_notifier/view/page_animation/custom_page_route.dart';
+import 'package:medicine_notifier/view/screens/patient/registration/patient_login.dart';
 import 'package:sizer/sizer.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -54,25 +55,27 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               imagePadding: EdgeInsets.symmetric(vertical: 7.h),
               imageAlignment: Alignment.bottomCenter,
               imageFlex: 3),
-          title: 'Pills Reminder',
+          title: 'Thousands of doctors',
           body: '',
-          image: SvgPicture.asset('assets/medicines-pill-svgrepo-com.svg')),
+          image: SvgPicture.asset('assets/doctor1.svg')),
       PageViewModel(
           decoration: PageDecoration(
               imagePadding: EdgeInsets.symmetric(vertical: 7.h),
               imageAlignment: Alignment.bottomCenter,
               imageFlex: 3),
-          title: 'Doctor Recomendation',
+          title: 'Appointment with doctors',
           body: '',
-          image: SvgPicture.asset('assets/doctor-svgrepo-com.svg')),
+          image: SvgPicture.asset('assets/doctor2.svg')),
       PageViewModel(
           decoration: PageDecoration(
               imagePadding: EdgeInsets.symmetric(vertical: 7.h),
               imageAlignment: Alignment.bottomCenter,
               imageFlex: 3),
-          title: 'Daily Progress',
+          title: 'Chat with doctors',
           body: '',
-          image: SvgPicture.asset('assets/chart-bar-chart-svgrepo-com.svg'))
+          image: SvgPicture.asset(
+            'assets/doctor3.svg',
+          ))
     ];
 
     return SafeArea(
