@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:medicine_notifier/view/components/colors_constant.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomeTextFieldWthOrangeBorder extends StatelessWidget {
   final String labelName;
-  final IconData iconData;
+  final IconData? iconData;
   final String? Function(String?)? validator;
+  final double? bordarRadius;
+  final TextInputType? keyoardType;
   final TextEditingController? controller;
   const CustomeTextFieldWthOrangeBorder(
       {required this.labelName,
-      required this.iconData,
+      this.bordarRadius,
+      this.keyoardType,
+      this.iconData,
       this.controller,
       required this.validator});
 
@@ -19,17 +24,20 @@ class CustomeTextFieldWthOrangeBorder extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         validator: validator,
+        keyboardType: keyoardType,
         decoration: InputDecoration(
-            suffixIcon: Icon(iconData, color: Colors.amber.shade900),
+            suffixIcon: Icon(iconData, color: kPrimaryColor),
             labelText: labelName,
-            labelStyle: TextStyle(color: Colors.amber.shade900),
-            focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.amber.shade900),
-                borderRadius: BorderRadius.circular(20.sp)),
-            border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.blue),
-                borderRadius: BorderRadius.circular(20.sp))),
+            labelStyle: TextStyle(color: kTextColor),
+            focusedBorder: _outlineBorder(),
+            border: _outlineBorder()),
       ),
     );
+  }
+
+  OutlineInputBorder _outlineBorder() {
+    return OutlineInputBorder(
+        borderSide: BorderSide(color: kPrimaryColor),
+        borderRadius: BorderRadius.circular(bordarRadius ?? 20.sp));
   }
 }
