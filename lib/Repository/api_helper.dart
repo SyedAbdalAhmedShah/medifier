@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medicine_notifier/blocs/make_appoinment_bloc/make_appoinment_state.dart';
 import 'package:medicine_notifier/model/doctor_model.dart';
+import 'package:medicine_notifier/model/make_appoinment.dart';
 import 'package:medicine_notifier/model/patient_model.dart';
 import 'package:medicine_notifier/view/components/strings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -61,9 +63,14 @@ class ApiHelper {
     return patient;
   }
 
-  makeAppoinment({required String uid, required String doctorID}) {
-    firestore.collection(FirebaseStrings.appoinments).doc(uid).set({
-      'data': [uid, doctorID]
-    }).whenComplete(() => print('APPOINTMENT INSERTED'));
+  makeAppoinment(
+      {required Map<String, dynamic> data, required String uid}) async {
+    await firestore
+        .collection(FirebaseStrings.appoinments)
+        .doc(uid)
+        .set(data)
+        .catchError((error) {
+      print('firebase error in aapi $error');
+    }).whenComplete(() => print('appoinment inserted'));
   }
 }

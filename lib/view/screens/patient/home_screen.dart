@@ -174,11 +174,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                       primary: kPrimaryColor,
                       padding:
                           EdgeInsets.symmetric(horizontal: size.width * 0.08)),
-                  onPressed: () {
-                    print("doctor id issss ${doctor.uid}");
-                    ApiHelper().makeAppoinment(
-                        uid: UserManager.user.uid!, doctorID: doctor.uid!);
-                  },
+                  onPressed: () {},
                   child: Text('book'),
                 )
               ],

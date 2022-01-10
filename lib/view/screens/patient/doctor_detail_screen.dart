@@ -103,8 +103,10 @@ class DoctorDetailScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
                 primary: kPrimaryColor),
             onPressed: () {
-              Navigator.of(context)
-                  .push(CustomPageRoute(child: BookingAppoinment()));
+              Navigator.of(context).push(CustomPageRoute(
+                  child: BookingAppoinment(
+                doctorUid: doctorModel.uid!,
+              )));
             },
             child: Text('Book A Appoinment')),
       ),
